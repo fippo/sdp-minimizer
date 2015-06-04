@@ -10,12 +10,12 @@ Timing is critical however. Wait too long to set the answer at the offerer and t
 So this will not be usable for signaling via twitter, but something like CTCP WEBRTC
 over IRC would work.
 
-See https://webrtchacks.com/the-minimum-viable-sdp/ for an in-depth explanation of what
-happens here and https://github.com/fippo/minimal-webrtc for a fully working sample.
+See [webrtchacks](https://webrtchacks.com/the-minimum-viable-sdp/) for an in-depth explanation of what
+happens here.
 
 # Usage
 
-See https://github.com/fippo/minimal-webrtc
+See [the full sample](https://github.com/fippo/minimal-webrtc).
 
 # LICENSE
 MIT
