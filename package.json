@@ -19,5 +19,11 @@
   "bugs": {
     "url": "https://github.com/fippo/sdp-minimizer/issues"
   },
-  "homepage": "https://github.com/fippo/sdp-minimizer"
+  "homepage": "https://github.com/fippo/sdp-minimizer",
+  "devDependencies": {
+    "tape": "^4.0.0"
+  },
+  "scripts": {
+    "test": "tape test/*.js"
+  }
 }
