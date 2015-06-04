@@ -1,0 +1,20 @@
+{
+  "name": "sdp-minimizer",
+  "version": "0.0.1",
+  "description": "Reduce WebRTC SDP to a bare minimum for transmission",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fippo/sdp-minimizer"
+  },
+  "keywords": [
+    "webrtc",
+    "sdp"
+  ],
+  "author": "Philipp Hancke <fippo@andyet.net>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/fippo/sdp-minimizer/issues"
+  },
+  "homepage": "https://github.com/fippo/sdp-minimizer"
+}
