@@ -1,5 +1,7 @@
 'use strict';
 
+var b2a = typeof btoa === 'undefined' ? require('./btoa.js') : btoa;
+
 exports.reduce = function(desc) {
   var sdp = desc.sdp;
   var lines = sdp.split('\r\n');
@@ -22,7 +24,7 @@ exports.reduce = function(desc) {
           return parseInt(h, 16);
         });
         // b64 is slightly more concise than colon-hex
-        return btoa(String.fromCharCode.apply(String, hex));
+        return b2a(String.fromCharCode.apply(String, hex));
       case 'a=ice-pwd':
         return line.substr(10); // already b64
       case 'a=ice-ufrag':

@@ -3,6 +3,9 @@
   "version": "0.0.1",
   "description": "Reduce WebRTC SDP to a bare minimum for transmission",
   "main": "index.js",
+  "browser": {
+    "./btoa.js": false
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/fippo/sdp-minimizer"
