@@ -1,2 +1,5 @@
 var min = require('../');
-console.log(min.expand('O,tCjVOmVGpVZjCem/,dOU77RWjJ8qQNb5OTz6D+U7h,wq7Dm8K+fsKbF0XCp8KlVEDCqGYZEVzDsjTDiArCucKFMnAJLsKpwpHCosKCw6hx'));
+console.log(min.expand(
+  'O,tCjVOmVGpVZjCem/,dOU77RWjJ8qQNb5OTz6D+U7h,wq7Dm8K+fsKbF0XCp8KlVEDCqGYZEVzD'
+    + 'sjTDiArCucKFMnAJLsKpwpHCosKCw6hx'
+));
