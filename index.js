@@ -1,5 +1,8 @@
 'use strict';
 
+var b2a = typeof btoa === 'undefined' ? require('./b.js').btoa : btoa;
+var a2b = typeof atob === 'undefined' ? require('./b.js').atob : atob;
+
 exports.reduce = function(desc) {
   var sdp = desc.sdp;
   var lines = sdp.split('\r\n');
@@ -22,7 +25,7 @@ exports.reduce = function(desc) {
           return parseInt(h, 16);
         });
         // b64 is slightly more concise than colon-hex
-        return btoa(String.fromCharCode.apply(String, hex));
+        return b2a(String.fromCharCode.apply(String, hex));
       case 'a=ice-pwd':
         return line.substr(10); // already b64
       case 'a=ice-ufrag':
@@ -63,7 +66,7 @@ exports.expand = function(str) {
   }
   sdp.push('a=ice-ufrag:' + comp[1]);
   sdp.push('a=ice-pwd:' + comp[2]);
-  sdp.push('a=fingerprint:sha-256 ' + atob(comp[3]).split('').map(function (c) { var d = c.charCodeAt(0); var e = c.charCodeAt(0).toString(16).toUpperCase(); if (d < 16) e = '0' + e; return e; }).join(':'));
+  sdp.push('a=fingerprint:sha-256 ' + a2b(comp[3]).split('').map(function (c) { var d = c.charCodeAt(0); var e = c.charCodeAt(0).toString(16).toUpperCase(); if (d < 16) e = '0' + e; return e; }).join(':'));
   var candparts;
   candparts = comp.splice(4, 2).map(function (c) { return parseInt(c, 32); });
   var ip = [(candparts[0] >> 24) & 0xff, (candparts[0] >> 16) & 0xff, (candparts[0] >> 8) & 0xff, candparts[0] & 0xff].join('.');
